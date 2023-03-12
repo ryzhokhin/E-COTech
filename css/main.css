@@ -4,8 +4,67 @@
     box-sizing: border-box;
 }
 :root{
-
+    var(--scrollTop);
 }
 @font-face {
+    font-family: pipa_228;
+    src: url(../fonts/posteretro.ttf);
+    font-weight: 900;
+}
 
+body{
+    background-color: #010101;
+    color: #fff;
+    font-family: pipa_228;
+    line-height: 1.55;
+}
+.main-header{
+    position:relative;
+
+}
+.layers{
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.layer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size:cover;
+    background-position:center;
+    will-change: transform;
+    z-index: 2;
+}
+
+.layers__base{
+    transform: translate3d(0, calc(var(--scrollTop)/1.6),0);
+    z-index: 0;
+}
+.layers__dom{
+    transform: translate3d(0, calc(var(--scrollTop)/2),0);
+    z-index: 0;
+}
+
+.layers__middle{
+    transform: translate3d(0, calc(var(--scrollTop)/2.5),0);
+    z-index: 0;
+}
+.layers__front{
+    transform: translate3d(0, calc(var(--scrollTop)/5),0);
+
+}
+.layer__header{
+    z-index: 1;
+    font-size: 200px;
+    transform: translate3d(0, calc(var(--scrollTop)/2),0);
+}
+
+.main-article{
+    min-height: 100vh;
 }
